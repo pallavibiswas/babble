@@ -4,3 +4,5 @@
 *.npy
 *.mkv
 *.mp4
+/server/venv
+server/.env
