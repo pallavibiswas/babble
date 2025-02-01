@@ -1,0 +1,19 @@
+# Video Downloading
+yt-dlp
+
+# Video Processing & Landmark Detection
+opencv-python
+mediapipe
+
+# Audio Processing
+ffmpeg-python
+librosa
+numpy
+
+# Machine Learning
+tensorflow
+keras
+
+# Utility Libraries
+matplotlib
+pandas
