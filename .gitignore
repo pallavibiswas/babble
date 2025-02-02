@@ -6,3 +6,5 @@
 *.mp4
 /server/venv
 server/.env
+/HackRUSP25/.venv
+/HackRUSP25/scripts/__pycache__

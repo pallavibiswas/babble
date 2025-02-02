@@ -97,10 +97,7 @@ model.save("data/model/speech_dysfunction_model.h5")
 
 # Evaluate the Model
 final_loss, final_accuracy = model.evaluate(X_train, y_train)
-print(f"Final Training Accuracy: {final_accuracy:.4f}")
 
-if __name__ == "__main__":
-    # Train Model only if this script is executed directly
-    history = model.fit(X_train, y_train, epochs=10, batch_size=8, validation_split=0.2)
+print(f"Final Training Accuracy: {final_accuracy:.4f}")
 
 print("Model training complete and saved.")
