@@ -1,4 +1,4 @@
-/* General Styles */
+/* Full-Screen Layout */
 body {
     margin: 0;
     padding: 0;
@@ -7,138 +7,130 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #22A1FB; /* Adjusted blue shade */
+    background: linear-gradient(135deg, rgba(34, 161, 251, 0.4), rgba(26, 130, 247, 0.9)); 
 }
 
-/* Layout Container */
-.signup-container {
+/* Login/Signup Container - Balanced Spacing */
+.login-container, .signup-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    width: 90%; /* Adjusted for better responsiveness */
-    max-width: 1300px; /* Adjusted for better layout */
-    gap: 2rem; /* Added gap between signup card and login box */
-}
-
-/* Sign-Up Card */
-.signup-card {
-    background: white;
-    padding: 2rem; /* Increased padding for more space inside */
+    width: 90%; /* Stretched out */
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px);
+    padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    width: 500px; /* Increased width for a larger card */
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    gap: 3rem; 
 }
 
-.signup-title {
-    font-size: 28px; /* Increased font size for the title */
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 2rem; /* Increased margin for better spacing */
+/* Left Panel - Form */
+.left-panel {
+    flex: 1;
+    padding: 2rem;
+    padding-right: 3.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Increased gap for better spacing */
-}
-
-.signup-input {
-    width: 100%;
-    height: 50px; /* Increased height for inputs */
-    padding: 0.75rem; /* Increased padding for inputs */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 18px; /* Increased font size for inputs */
-    outline: none; /* Removed default outline */
-}
-
-.signup-input:focus {
-    border-color: #3897f0; /* Added focus state for better UX */
-}
-
-.signup-button {
-    width: 100%;
-    height: 50px; /* Increased height for the button */
-    background: #3897f0;
+/* Title, Form Labels, and Links */
+.left-panel h2, .left-panel p, .login-form label, .forgot-password {
     color: white;
-    font-size: 18px; /* Increased font size for the button */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.signup-button:hover {
-    background: #297ae5;
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 1rem;
-    text-align: center; /* Centered error message */
-}
-
-/* Login Box (Speech Bubble) */
-.login-box {
-    /* background: url('/Speech Bubble.png') no-repeat center center; Added background image */
-    background-size: 500px; /* Ensured the image scales properly */
-    width: 500px; /* Adjusted width to match image proportions */
-    height: 500px; /* Adjusted height to match image proportions */
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
+/* Form Layout */
+.login-form, .signup-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Added for positioning content */
-    overflow: visible; /* Ensured the image isn't clipped */
+    gap: 1rem;
 }
 
-/* Flip only the background image */
-.login-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Input Fields - Consistent & Clean */
+.login-form input, .signup-form input {
     width: 100%;
-    height: 120%;
-    background: url('/Speech Bubble.png') no-repeat center center;
-    background-size: 500px; /* Match the size of the container */
-    transform: scaleX(-1); /* Flip the background image horizontally */
-    z-index: -1; /* Ensure it stays behind the content */
-    border-radius: 15px; /* Match the container's border radius */
-}
-
-.login-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 0.5rem; /* Adjusted margin for better spacing */
-}
-
-.login-text {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 1rem; /* Adjusted margin for better spacing */
-}
-
-.login-button {
-    background: #3897f0;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
+    height: 35px; 
+    padding: 14px; 
+    border-radius: 6px;
     font-size: 16px;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
 }
 
-.login-button:hover {
-    background: #297ae5;
+/* Input Placeholder */
+.login-form input::placeholder, .signup-form input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Form Button */
+.login-form button, .signup-form button {
+    width: 100%;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 5px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Button Hover */
+.login-form button:hover, .signup-form button:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.02);
+}
+
+/* Right Panel - Image */
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Images without boxes and adjusted positioning */
+.right-panel img {
+    width: auto;
+    max-width: 300px; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.right-panel img:first-child {
+    align-self: flex-start;
+    margin-left: -30px; 
+}
+
+.right-panel img:last-child {
+    align-self: flex-end;
+    margin-right: -200px; 
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .login-container, .signup-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+
+    .right-panel {
+        order: -1;
+        margin-bottom: 20px;
+    }
 }

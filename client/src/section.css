@@ -1,28 +1,113 @@
-/* Background Color */
+/* Full-Screen Glassmorphism Background */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, rgba(34, 161, 251, 0.4), rgba(26, 130, 247, 0.9)); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section Container */
 .section-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #22A1FB; /* Blue background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Content Wrapper (Lesson + Image) */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+/* Person Image */
+.pointing-person {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Lesson Container - Glassmorphism */
+.lesson-container {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  color: black;
+  max-width: 600px;
+}
+
+/* Scrollable Lesson Box */
+.lesson-box {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 8px;
+  text-align: left;
+  color: #111;
+  font-size: 15px;
+}
+
+/* Softer, More Defined Buttons */
+.section-button, .pdf-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.6); 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2); 
+  margin: 20px 0; 
+}
+
+/* Hover Effect*/
+.section-button:hover, .pdf-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .section-button, .pdf-button {
+      padding: 12px 24px;
+      font-size: 15px;
   }
-  .user-profile {
-    align-items: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .content-wrapper {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  /* Button Styles */
-  .section-button {
-    background-color: white;
-    color: #22A1FB; /* Blue text */
-    padding: 16px 32px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    margin: 0 16px;
-    font-size: 16px;
+
+  .pointing-person {
+      width: 120px;
   }
-  
-  .section-button:hover {
-    background-color: #f3f4f6; /* Light gray on hover */
-  }
-  
+}
