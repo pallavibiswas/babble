@@ -17,7 +17,7 @@ RATE = 16000
 CHUNK = 512  
 
 # Maximum camera runtime (10 minutes)
-MAX_RUNTIME = 10 * 60  
+MAX_RUNTIME = 0.5 * 60  
 
 # Paragraph to be displayed for reading
 PARAGRAPH = """ 
